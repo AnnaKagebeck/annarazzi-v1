@@ -1803,7 +1803,7 @@ if ( ! function_exists( 'pinboard_post_image' ) ) :
 function pinboard_post_image() {
 	if( has_post_thumbnail() ) : ?>
 		<figure>
-			<a href="<?php $image = wp_get_attachment_image_src( get_post_thumbnail_id(), 'full' ); echo $image[0] ?>" title="<?php the_title_attribute(); ?>" class="colorbox" rel="attachment">
+			<a href="<?php $image = wp_get_attachment_image_src( the_permalink() ); echo $image[0] ?>" title="<?php the_title_attribute(); ?>" >
 				<?php the_post_thumbnail( ( pinboard_is_teaser() ? 'teaser-thumb' : 'image-thumb' ) ); ?>
 			</a>
 		</figure>
